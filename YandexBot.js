@@ -15,7 +15,7 @@
 
 let links = document.links;
 let button = document.getElementsByClassName("search3__button mini-suggest__button")[0];
-let keywords = ["Cтрахование автомобиля", "каталог автомобилей"];
+let keywords = ["Cтрахование автомобиля", "Покупка автомобиля ", "купля-продажа авто", "Автомобиль с пробегом", "каталог автомобилей"];
 let keyword = keywords[getRandom(0, keywords.length)];
 let yandexInput = document.getElementsByName("text")[0];
 let pager=document.getElementsByClassName("link link_theme_none link_target_serp pager__item pager__item_kind_next i-bem")[0];
@@ -55,9 +55,10 @@ if (button !== undefined) {
       break;
     }
   }
-  if (document.getElementsByClassName("pager__item pager__item_current_yes pager__item_kind_page")[0].innerText=="3"){
-    nextYandexPage=false;
+  if (window.location.toString().includes("p=3") == true) {
+   nextYandexPage=false;
     location.href="https://ya.ru/";
+
   }
   if (nextYandexPage) {
     setTimeout(()=>{
